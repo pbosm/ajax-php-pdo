@@ -15,8 +15,9 @@
         <input type="text" id="cidade"><br>
     <span>Email: </span><br>
         <input type="email" id="email"><br><br>
-    <button id="salvar">Enviar</button><br>
-    <br><div id="msg"></div>    
+    <button id="salvar">Enviar</button> 
+    <button id="select" style="margin-left: 5px;" onclick="showClient()">Ver usuários</button>
+    <br><div id="msg" style="margin-top: 5px;"></div>    
     
     <script>
 	    createClient();

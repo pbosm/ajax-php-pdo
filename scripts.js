@@ -21,3 +21,24 @@ function createClient() {
         });
     });
 }
+
+function showClient() {
+
+    $.ajax({
+        url: 'insert.php',
+        type: 'POST',
+        data: {nome:    $('#cliente').val(),                       
+                cidade:  $('#cidade').val(),
+                email:   $('#email').val()
+            },
+            beforeSend: function(){
+                $('#msg').html('Carregando...');
+            },
+            success:function(data){
+                $('#msg').html(data);
+            },
+            error:function(data){
+                $('#msg').html('<br>Página não encontrada');
+            }
+    });
+}
