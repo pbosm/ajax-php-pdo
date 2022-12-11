@@ -2,7 +2,7 @@
 
 if($_POST['function'] == 'create'){
     $create = new Create();
-    $create->insertClient();
+    return $create->insertClient();
 }
 
 class Create {

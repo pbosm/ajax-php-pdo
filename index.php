@@ -93,13 +93,33 @@
 </head>
 <body>
 
+<script type="text/html" id="templateRowEditClient">
+     <tr data-table-order="{{order}}">
+          <td data-column="cliente">{{cliente}}</td>
+          <td data-column="cidade">{{cidade}}</td>
+          <td data-column="email">{{email}}</td>
+     </tr>
+</script>
+
+<script type="text/html" id="templateEditClient">
+    <form class="text-center" id="edit-client">
+          <span class="text center">Nome do Cliente: </span><br>
+               <input type="text" name="txtCliente" id="cliente"><br>
+          <span>Cidade: </span><br>
+               <input type="text" name="txtCidade" id="cidade"><br>
+          <span>Email: </span><br>
+               <input type="email" name="txtEmail" id="email"><br><br>
+          <button id="editar">Editar</button> 
+    </form>
+</script>
+
 <script type="text/html" id="templateRowSelectClient">
      <tr data-table-order="{{order}}">
           <td data-column="cliente">{{cliente}}</td>
           <td data-column="cidade">{{cidade}}</td>
           <td data-column="email">{{email}}</td>
-          <td data-column="delete" onclick="editClient('{{id}}')" class='btn btn-primary'>Editar</td>
-          <td data-column="edit" onclick="deleteClient('{{iddelete}}')" class='btn btn-danger'>Excluir</td>
+          <td data-column="edit" onclick="editClient('{{idedit}}', '{{clienteedit}}', '{{cidadeedit}}', '{{emailedit}}')" class='btn btn-primary'>Editar</td>
+          <td data-column="delete" onclick="deleteClient('{{iddelete}}', '{{clientedelete}}')" class='btn btn-danger'>Excluir</td>
      </tr>
 </script>
 
@@ -133,7 +153,7 @@
 
 <div class="fp-modal" show="false">
     <div class="b-modal">
-        <div class="h-modal">
+        <div class="h-modal text-center">
             <span class="h-modal-title">
                 {{modalTitle}}
             </span>

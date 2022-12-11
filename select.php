@@ -2,7 +2,7 @@
 
 if($_POST['function'] == 'select'){
     $select = new Select();
-    $select->getClient();
+    return $select->getClient();
 }
 
 class Select {
