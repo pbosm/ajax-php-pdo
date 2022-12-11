@@ -1,17 +1,32 @@
 <?php
 
-    $conn = new PDO('mysql:host=localhost;dbname=ajaxphp', "root", "");
+if($_POST['function'] == 'create'){
+    $create = new Create();
+    $create->insertClient();
+}
 
-    $data = date("d-m-Y");
+class Create {
 
-    $sql = $conn->prepare("INSERT INTO clientes (cliente, cidade, email) VALUES ('".$_POST['cliente']."','".$_POST['cidade']."','".$_POST['email']."')");
+    public function insertClient() {
+        $cliente    = $_POST['cliente'];
+        $cidade     = $_POST['cidade'];
+        $email      = $_POST['email'];
 
-    $sql->execute();
+        require_once('conn.php');
+        $conn = Database::connectionPDO();
 
-    if($sql == true) {
-        echo 'Cadastrado com sucesso';
-    } else {
-        echo 'Houve um erro';
+        $sql = $conn->prepare("INSERT INTO clientes (cliente, cidade, email) VALUES (:cliente, :cidade, :email)");
+        $sql->bindValue(':cliente', $cliente);
+        $sql->bindValue(':cidade', $cidade);
+        $sql->bindValue(':email', $email);
+        $sql->execute();
+
+        if($sql == true) {
+            echo 'Cadastrado com sucesso';
+        } else {
+            echo 'Houve um erro';
+        }
     }
+}
 
 ?>
