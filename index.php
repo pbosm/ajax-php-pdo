@@ -5,91 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PHP com Ajax</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
     <script src="scripts.js"></script>
-    <style>/* Modal Styles */
-.fp-modal {
-	overflow-y: auto;
-	width: 100vw;
-	height: 100vh;
-	background-color: rgba(0, 0, 0, 0.5);
-	position: fixed;
-	z-index: 9999999;
-	top: 0;
-	left: 0;
-	justify-content: center;
-	align-items: center;
-	display: none;
-}
-
-.fp-modal[show="true"] {
-	display: flex;
-}
-
-.fp-modal[show="true"] .b-modal {
-	animation: a-modal .3s;
-}
-
-.b-modal {
-	position: relative;
-	width: 60%;
-	max-height: 90vh;
-	overflow-y: auto;
-	top: 0;
-	min-width: 300px;
-	background-color: white;
-	border-radius: 5px;
-	margin: 20px 0;
-}
-
-.b-modal.modal-small {
-	width: 30%;
-}
-
-.b-modal.modal-large {
-	width: 95%;
-}
-
-@keyframes a-modal {
-	from {
-		opacity: 0;
-		transform: translate3d(0, -60px, 0);
-	}
-
-	to {
-		opacity: 1;
-		transform: translate3d(0, 0, 0);
-	}
-}
-
-.h-modal {
-	padding: 15px;
-	border-bottom: 1px solid rgba(0, 0, 0, 0.25);
-	font-size: 20px;
-	position: relative;
-}
-
-.c-modal {
-	padding: 15px;
-}
-
-.x-modal {
-	font-size: 25px;
-	width: 35px;
-	height: 35px;
-	border-radius: 5px;
-	border: 0;
-	background-color: transparent;
-	position: absolute;
-	right: 10px;
-	top: 10px;
-	cursor: pointer;
-	z-index: 99999999;
-}</style>
 </head>
 <body>
 

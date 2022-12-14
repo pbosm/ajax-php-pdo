@@ -22,7 +22,7 @@ class Create {
         $sql->execute();
 
         if($sql == true) {
-            echo 'Cadastrado com sucesso';
+            echo $cliente, ' Cadastrado com sucesso';
         } else {
             echo 'Houve um erro';
         }
