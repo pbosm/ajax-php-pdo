@@ -17,13 +17,13 @@ if($_POST['function'] == 'update'){
     $cidade     = $_POST['cidade'];
     $email      = $_POST['email'];
     
-    $delete = new Delete();
-    return $delete->deleteClient($id, $cliente, $cidade, $email);
+    $update = new Update();
+    return $update->updateClient($id, $cliente, $cidade, $email);
 }
 
-class Delete {
+class Update {
 
-    public function deleteClient($id, $cliente, $cidade, $email) {
+    public function updateClient($id, $cliente, $cidade, $email) {
         $id         = paramFormat($id);
         $cliente    = paramFormat($cliente);
         $cidade     = paramFormat($cidade);
@@ -38,7 +38,6 @@ class Delete {
         $code->bindParam(':cidade', $cidade);
         $code->bindParam(':email', $email);
         $code->execute();
-
     }
 }
 
